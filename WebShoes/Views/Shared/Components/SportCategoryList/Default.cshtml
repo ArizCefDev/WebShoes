@@ -1,0 +1,11 @@
+﻿@model IEnumerable<DTO.DTOEntity.MarkaSportDTO>
+
+<div class="content-left-top-brands">
+    <h3>Categories</h3>
+    @foreach (var item in Model)
+    {
+        <ul>
+            <li><a href="/Sport/GetMarkaSport/@item.ID/">@item.ShoeName</a></li>
+        </ul>
+    }
+</div>

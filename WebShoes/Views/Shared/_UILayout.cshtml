@@ -1,0 +1,128 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>WebShoes.com</title>
+    <link href="~/WebShoes/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    </script>
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+    <!----start-alert-scroller---->
+    <script src="~/WebShoes/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/WebShoes/js/jquery.easy-ticker.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#demo').hide();
+            $('.vticker').easyTicker();
+        });
+    </script>
+    <!----start-alert-scroller---->
+    <!-- start menu -->
+    <link href="~/WebShoes/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="~/WebShoes/js/megamenu.js"></script>
+    <script>$(document).ready(function () { $(".megamenu").megamenu(); });</script>
+    <script src="~/WebShoes/js/menu_jquery.js"></script>
+    <!-- //End menu -->
+    <!---slider---->
+    <link rel="stylesheet" href="~/WebShoes/css/slippry.css">
+    <script src="~/WebShoes/js/jquery-ui.js" type="text/javascript"></script>
+    <script src="~/WebShoes/js/scripts-f0e4e0c2.js" type="text/javascript"></script>
+    <script>
+        jQuery('#jquery-demo').slippry({
+            // general elements & wrapper
+            slippryWrapper: '<div class="sy-box jquery-demo" />', // wrapper to wrap everything, including pager
+            // options
+            adaptiveHeight: false, // height of the sliders adapts to current slide
+            useCSS: false, // true, false -> fallback to js if no browser support
+            autoHover: false,
+            transition: 'fade'
+        });
+    </script>
+    <!----start-pricerage-seletion---->
+    <script type="text/javascript" src="~/WebShoes/js/jquery-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/WebShoes/css/jquery-ui.css">
+    <script type='text/javascript'>
+        //<![CDATA[
+        $(window).load(function () {
+            $("#slider-range").slider({
+                range: true,
+                min: 0,
+                max: 500,
+                values: [100, 400],
+                slide: function (event, ui) {
+                    $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+                }
+            });
+            $("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
+
+        });//]]>
+    </script>
+    <!----//End-pricerage-seletion---->
+    <!---move-top-top---->
+    <script type="text/javascript" src="~/WebShoes/js/move-top.js"></script>
+    <script type="text/javascript" src="~/WebShoes/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1200);
+            });
+        });
+    </script>
+    <!---//move-top-top---->
+</head>
+<body>
+    <!---start-header---->
+    <div class="header">
+        @await Html.PartialAsync("/Views/LayoutPartials/HeaderPartial.cshtml")
+        <!----search---->
+        <div class="mid-header">
+            <div class="wrap">
+                <div class="mid-grid-left">
+                    <form>
+                        <input type="text" placeholder="What Are You Looking for?" />
+                    </form>
+                </div>
+                <div class="mid-grid-right">
+                    <a class="logo" href="index.html"><span> </span></a>
+                </div>
+                <div class="clear"> </div>
+            </div>
+        </div>
+        <!----//End-mid-head---->
+        <!----start-bottom-header---->
+        @await Html.PartialAsync("/Views/LayoutPartials/NavBarPartial.cshtml")
+    </div>
+
+    <!----start-image-slider---->
+    @await Component.InvokeAsync("SlidersList")
+
+    <!----start-price-rage--->
+    <div class="wrap">
+        <div class="price-rage">
+            <h3>Weekly selection:</h3>
+            <div id="slider-range">
+            </div>
+        </div>
+    </div>
+
+    <!--- start-content---->
+    @RenderBody()
+
+    <!---- start-bottom-grids---->
+    <div class="bottom-grids">
+        @await Component.InvokeAsync("TopGridsList")
+        @await Component.InvokeAsync("BottomGridsList")
+    </div>
+
+    <!---start-footer---->
+    @await Html.PartialAsync("/Views/LayoutPartials/FooterPartial.cshtml")
+</body>
+</html>

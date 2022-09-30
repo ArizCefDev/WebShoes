@@ -1,0 +1,14 @@
+﻿@model IEnumerable<DTO.DTOEntity.MarkaClassicDTO>
+
+<div class="col1">
+    <div class="h_nav">
+        <h4>Classic Zone</h4>
+        <ul>
+                <li><a href="/Classic/Index/">All</a></li>
+            @foreach (var item in Model)
+            {
+                <li><a href="#">@item.ShoeName</a></li>
+            }
+        </ul>
+    </div>
+</div>

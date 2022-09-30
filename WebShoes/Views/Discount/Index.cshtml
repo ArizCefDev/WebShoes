@@ -1,0 +1,118 @@
+﻿@model IEnumerable<DTO.DTOEntity.ShoeDiscountDTO>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<div class="content">
+    <div class="wrap">
+        <div class="content-left">
+            <div class="content-left-top-grid">
+                <div class="content-left-price-selection">
+                    <h4>Select Price:</h4>
+                    <div class="price-selection-tree">
+                        <span class="col_checkbox">
+                            <input id="10" class="css-checkbox10" type="checkbox">
+                            <label class="normal"><i for="10" name="demo_lbl_10" class="css-label10"> </i> 400</label>
+                        </span>
+                        <span class="col_checkbox">
+                            <input id="11" class="css-checkbox11" type="checkbox">
+                            <label class="active1"><i for="11" name="demo_lbl_11" class="css-label11"> </i>350</label>
+                        </span>
+                        <span class="col_checkbox">
+                            <input id="12" class="css-checkbox12" type="checkbox">
+                            <label class="normal"><i for="12" name="demo_lbl_12" class="css-label12"> </i> 300</label>
+                        </span>
+                        <span class="col_checkbox">
+                            <input id="13" class="css-checkbox13" type="checkbox">
+                            <label class="normal"><i for="13" name="demo_lbl_13" class="css-label13"> </i>250</label>
+                        </span>
+                        <span class="col_checkbox">
+                            <input id="14" class="css-checkbox14" type="checkbox">
+                            <label class="normal"><i for="14" name="demo_lbl_14" class="css-label14"> </i> 200</label>
+                        </span>
+                        <span class="col_checkbox">
+                            <input id="15" class="css-checkbox15" type="checkbox">
+                            <label class="normal"><i for="15" name="demo_lbl_15" class="css-label15"> </i>150</label>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="content-right">
+            <div class="product-grids">
+                <!--- start-rate---->
+                <script src="~/WebShoes/js/jstarbox.js"></script>
+                <link rel="stylesheet" href="~/WebShoes/css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
+                <script type="text/javascript">
+                    jQuery(function () {
+                        jQuery('.starbox').each(function () {
+                            var starbox = jQuery(this);
+                            starbox.starbox({
+                                average: starbox.attr('data-start-value'),
+                                changeable: starbox.hasClass('unchangeable') ? false : starbox.hasClass('clickonce') ? 'once' : true,
+                                ghosting: starbox.hasClass('ghosting'),
+                                autoUpdateAverage: starbox.hasClass('autoupdate'),
+                                buttons: starbox.hasClass('smooth') ? false : starbox.attr('data-button-count') || 5,
+                                stars: starbox.attr('data-star-count') || 5
+                            }).bind('starbox-value-changed', function (event, value) {
+                                if (starbox.hasClass('random')) {
+                                    var val = Math.random();
+                                    starbox.next().text(' ' + val);
+                                    return val;
+                                }
+                            })
+                        });
+                    });
+                </script>
+                <!---//End-rate---->
+                <!---caption-script---->
+                <!---//mehsullar---->
+                @foreach (var item in Model)
+                {
+                    <div style="margin:7px;" class="product-grid fade last-grid" onclick="location.href='details.html';">
+                        <div class="product-grid-head">
+                            <ul class="grid-social">
+                                <li><a class="facebook" href="#"><span> </span></a></li>
+                                <li><a class="twitter" href="#"><span> </span></a></li>
+                                <li><a class="googlep" href="#"><span> </span></a></li>
+                                <div class="clear"> </div>
+                            </ul>
+                            <div class="block">
+                                <div class="starbox small ghosting"> </div> <span> (46)</span>
+                            </div>
+                        </div>
+                        <div class="product-pic">
+                            <a href="#"><img src="~/WebShoes/images/product2.jpg" title="product-name" /></a>
+                            <p>
+                                <a href="#">
+                                    <small>@item.Name</small>
+                                </a>
+                                <span>@item.Description</span>
+                            </p>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-info-cust">
+                                <a href="details.html">Details</a>
+                            </div>
+                            <div class="product-info-price">
+                                <del style="color:red;">@item.CurrencyID @item.OldPrice</del>
+                                <br>
+                                <a href="details.html">@item.CurrencyID @item.Price</a>
+                            </div>
+                            <div class="clear"> </div>
+                        </div>
+                        <div class="more-product-info">
+                            <span> </span>
+                        </div>
+                    </div>
+                }
+
+                <div class="clear"> </div>
+            </div>
+        </div>
+        <div class="clear"> </div>
+    </div>
+</div>
+

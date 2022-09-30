@@ -1,0 +1,26 @@
+﻿<div class="header-bottom">
+	<div class="wrap">
+		<!-- Navbar -->
+		<ul class="megamenu skyblue">
+			<li class="grid">
+				<a class="color2" href="/Discount/Index/">Home</a>
+			</li>
+			<li class="grid">
+				<a class="color2">Shoes</a>
+				<div class="megapanel">
+					<div class="row">
+						@await Component.InvokeAsync("SportZoneList")
+						@await Component.InvokeAsync("StyleZoneList")
+						@await Component.InvokeAsync("ClassicZoneList")
+					</div>
+				</div>
+			</li>
+			<li class="grid">
+				<a class="color2" href="#">About</a>
+			</li>
+			<li class="grid">
+				<a class="color2" href="#">Contact</a>
+			</li>
+		</ul>
+	</div>
+</div>
