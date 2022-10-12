@@ -1,0 +1,33 @@
+﻿@model IEnumerable<DTO.DTOEntity.MessageDTO>
+
+<li class="dropdown">
+    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+        <i class="fa fa-tasks"></i>
+        <span class="badge bg-success">@ViewBag.newmessage</span>
+    </a>
+    <ul class="dropdown-menu extended tasks-bar">
+        <li>
+            <p class="">You have @ViewBag.newmessage message</p>
+        </li>
+        @foreach (var item in Model)
+        {
+            <li>
+                <a href="#">
+                    <div class="task-info clearfix">
+                        <div class="desc pull-left">
+                            <h5>@item.Subject</h5>
+                            <p>@item.Email send you new a message</p>
+                        </div>
+                        <span class="notification-pie-chart pull-right" data-percent="45">
+                            <span class="percent"></span>
+                        </span>
+                    </div>
+                </a>
+            </li>
+        }
+
+        <li class="external">
+            <a href="#">See All Tasks</a>
+        </li>
+    </ul>
+</li>

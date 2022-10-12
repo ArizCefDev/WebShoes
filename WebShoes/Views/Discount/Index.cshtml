@@ -4,6 +4,35 @@
     Layout = "~/Views/Shared/_UILayout.cshtml";
 }
 
+<div class="mid-header">
+    <div class="wrap">
+        <div class="mid-grid-left">
+            @using (Html.BeginForm())
+            {
+                @Html.TextBox("s")
+            }
+        </div>
+        <div class="mid-grid-right">
+            <a class="logo" href="index.html"><span> </span></a>
+        </div>
+        <div class="clear"> </div>
+    </div>
+</div>
+<!----//End-mid-head---->
+<!----start-bottom-header---->
+@await Html.PartialAsync("/Views/LayoutPartials/NavBarPartial.cshtml")
+
+<!----start-image-slider---->
+@await Component.InvokeAsync("SlidersList")
+
+<!----start-price-rage--->
+<div class="wrap">
+    <div class="price-rage">
+        <h3>Weekly selection:</h3>
+        <div id="slider-range">
+        </div>
+    </div>
+</div>
 <div class="content">
     <div class="wrap">
         <div class="content-left">
@@ -40,6 +69,9 @@
                 </div>
             </div>
         </div>
+@*        <div class="product-box-head-left">
+            <h3>Discount Products <span>(@ViewBag.discountshoe)</span></h3>
+        </div>*@
         <div class="content-right">
             <div class="product-grids">
                 <!--- start-rate---->
@@ -84,12 +116,11 @@
                             </div>
                         </div>
                         <div class="product-pic">
-                            <a href="#"><img src="~/WebShoes/images/product2.jpg" title="product-name" /></a>
+                            <a href="#"><img src="@item.Image1" title="product-name" style="width:210px;height:240px;" /></a>
                             <p>
                                 <a href="#">
                                     <small>@item.Name</small>
                                 </a>
-                                <span>@item.Description</span>
                             </p>
                         </div>
                         <div class="product-info">
@@ -97,14 +128,13 @@
                                 <a href="details.html">Details</a>
                             </div>
                             <div class="product-info-price">
-                                <del style="color:red;">@item.CurrencyID @item.OldPrice</del>
+                                <del style="color:red;">@item.CurrencyName @item.OldPrice</del>
                                 <br>
-                                <a href="details.html">@item.CurrencyID @item.Price</a>
+                                <a href="details.html">@item.CurrencyName @item.Price</a>
                             </div>
                             <div class="clear"> </div>
                         </div>
                         <div class="more-product-info">
-                            <span> </span>
                         </div>
                     </div>
                 }

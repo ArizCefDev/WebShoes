@@ -1,0 +1,107 @@
+﻿@model DTO.DTOEntity.ShoeClassicDTO
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_PagesLayout.cshtml";
+}
+
+<!----search---->
+<div class="mid-header">
+	<div class="wrap">
+		<div class="mid-grid-right">
+			<a class="logo" href="/Discount/Index/"><span> </span></a>
+		</div>
+		<div class="clear"> </div>
+	</div>
+</div>
+<!----//End-mid-head---->
+<!----start-bottom-header---->
+@await Html.PartialAsync("/Views/LayoutPartials/NavBarPartial.cshtml")
+
+		<!--- start-content---->
+		<div class="content details-page">
+			<!---start-product-details--->
+			<div class="product-details">
+				<div class="wrap">
+			@await Html.PartialAsync("/Views/LayoutPartials/DetailsScriptPartial1.cshtml")
+			
+					<div class="details-left">
+					<div class="details-left-slider">
+						<ul id="etalage">
+                            <li>
+								<img class="etalage_thumb_image" src="@Model.Image1" />
+								<img class="etalage_source_image" src="@Model.Image1" />
+							</li>
+							<li>
+								<img class="etalage_thumb_image" src="@Model.Image2" />
+							<img class="etalage_source_image" src="@Model.Image2" />
+							</li>
+							<li>
+							<img class="etalage_thumb_image" src="@Model.Image3" />
+							<img class="etalage_source_image" src="@Model.Image3" />
+							</li>
+							<li>
+							<img class="etalage_thumb_image" src="@Model.Image4" />
+							<img class="etalage_source_image" src="@Model.Image4" />
+							</li>
+							<li>
+							<img class="etalage_thumb_image" src="@Model.Image5" />
+							<img class="etalage_source_image" src="@Model.Image5" />
+							</li>
+							<li>
+							<img class="etalage_thumb_image" src="@Model.Image6" />
+							<img class="etalage_source_image" src="@Model.Image6" />
+							</li>
+							<li>
+							<img class="etalage_thumb_image" src="@Model.Image7" />
+							<img class="etalage_source_image" src="@Model.Image7" />
+							</li>
+						</ul>
+					</div>
+					<div class="details-left-info">
+						<div class="details-right-head">
+						<h1>@Model.Name</h1>
+						<ul class="pro-rate">
+							<li><a class="product-rate" href="#"> <label> </label></a> <span> </span></li>
+							<li><a href="#">0 Review(s) Add Review</a></li>
+						</ul>
+						<p class="product-detail-info">@Model.Description </p>
+						<div class="product-more-details">
+							<ul class="price-avl">
+								<li class="price"><label>@Model.CurrencyID @Model.Price</label></li>
+								<li class="stock"><i>@Model.Stock In stock</i></li>
+								<div class="clear"> </div>
+							</ul>
+							<ul class="product-colors">
+								<h3>Color: @Model.ColorID</h3>
+								<div class="clear"> </div>
+							</ul>
+							<ul class="prosuct-qty">
+								<span>Size: @Model.SizeID</span>
+								
+							</ul>
+							<input type="button" value="add to cart" />
+							<ul class="product-share">
+								<h3>All so Share On</h3>
+								<ul>
+									<li><a class="share-face" href="#"><span> </span> </a></li>
+									<li><a class="share-twitter" href="#"><span> </span> </a></li>
+									<li><a class="share-google" href="#"><span> </span> </a></li>
+									<li><a class="share-rss" href="#"><span> </span> </a></li>
+									<div class="clear"> </div>
+								</ul>
+							</ul>
+						</div>
+					</div>
+					</div>
+					<div class="clear"> </div>
+				</div>
+				<div class="details-right">
+					<a href="/Discount/Index/">SEE MORE</a>
+				</div>
+				<div class="clear"> </div>
+			</div>
+			<div class="clear"> </div>
+			</div>
+		</div>
+		<!---- start-bottom-grids---->
+

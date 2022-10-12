@@ -1,0 +1,45 @@
+﻿@model IEnumerable<DTO.DTOEntity.ContactDTO>
+
+<div class="contact-grids">
+    @foreach (var item in Model)
+   {
+        <div class="col_1_of_bottom span_1_of_first1">
+            <h5>Address</h5>
+            <ul class="list3">
+                <li>
+                    <img src="~/WebShoes/images/home.png" alt="">
+                    <div class="extra-wrap">
+                        <p>@item.Address</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col_1_of_bottom span_1_of_first1">
+            <h5>Phones</h5>
+            <ul class="list3">
+                <li>
+                    <img src="~/WebShoes/images/phone.png" alt="">
+                    <div class="extra-wrap">
+                        <p><span>Telephone:</span>@item.PhoneNumber1</p>
+                    </div>
+                    <img src="~/WebShoes/images/fax.png" alt="">
+                    <div class="extra-wrap">
+                        <p><span>FAX:</span>@item.Fax</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col_1_of_bottom span_1_of_first1">
+            <h5>Email</h5>
+            <ul class="list3">
+                <li>
+                    <img src="~/WebShoes/images/email.png" alt="">
+                    <div class="extra-wrap">
+                        <p><span class="mail"><a href="@item.Email">@item.Email</a></span></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    }
+    <div class="clear"></div>
+</div>

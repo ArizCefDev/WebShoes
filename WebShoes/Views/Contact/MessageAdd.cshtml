@@ -1,0 +1,52 @@
+﻿@model DTO.DTOEntity.MessageDTO
+@{
+    ViewData["Title"] = "MessageAdd";
+    Layout = "~/Views/Shared/_PagesLayout.cshtml";
+}
+
+<div class="mid-header">
+    <div class="wrap">
+        <div class="mid-grid-left">
+            <h1>WebShoes.com</h1>
+        </div>
+        <div class="mid-grid-right">
+            <a class="logo" href="/Discount/Index/"><span> </span></a>
+        </div>
+        <div class="clear"> </div>
+    </div>
+</div>
+<!----//End-mid-head---->
+<!----start-bottom-header---->
+@await Html.PartialAsync("/Views/LayoutPartials/NavBarPartial.cshtml")
+<!--- start-content---->
+<div class="content contact-main">
+    <ul class="product-head" style="margin-left:130px">
+        <li><a href="/Discount/Index/">Home</a> <span>::</span></li>
+        <li class="active-page"><a href="/Contact/MessageAdd/">Contact Page</a></li>
+        <div class="clear"> </div>
+    </ul>
+    <!----start-contact---->
+    <div class="contact-info">
+        @await Component.InvokeAsync("MapLocationList")
+        <div class="wrap">
+            @await Component.InvokeAsync("ContactList")
+
+            <form method="post">
+                <div class="contact-form">
+                    <div class="contact-to">
+                        <input type="text" asp-for="Name" class="text" value="Name..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name...';}">
+                        <input type="text" asp-for="Email" class="text" value="Email..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email...';}">
+                        <input type="text" asp-for="Subject" class="text" value="Subject..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject...';}">
+                    </div>
+                    <div class="text2">
+                        <textarea asp-for="Text" value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message..</textarea>
+                    </div>
+                    <span><input type="submit" class="" value="Submit"></span>
+                    <div class="clear"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!----//End-contact---->
+</div>
+<!---- start-bottom-grids---->

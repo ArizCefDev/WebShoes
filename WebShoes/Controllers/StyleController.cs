@@ -19,17 +19,46 @@ namespace WebShoes.Controllers
             _dBContext = dBContext;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string s)
         {
+
+            var values = from a in _shoeStyleService.GetCurrencyInclude() select a;
+            if (!string.IsNullOrEmpty(s))
+            {
+                values = _shoeStyleService.SearchSportShoe(s);
+            }
             ViewBag.styleshoes = _dBContext.ShoeStyles.Count();
-            var values = _shoeStyleService.GetAll();
-            return View(values);
+            return View(values.OrderByDescending(x => x.ID));
         }
 
         public IActionResult GetMarkaStyle(int id)
         {
             var values = _shoeStyleService.GetMarkaShoe(id);
-            return View(values.OrderByDescending(x => x.ID));
+            return View(values);
+        }
+
+        public IActionResult GetStyleCurrency(int id)
+        {
+            var values = _shoeStyleService.GetCurrencyShoe(id);
+            return View(values);
+        }
+
+        public IActionResult GetStyleSize(int id)
+        {
+            var values = _shoeStyleService.GetSizeShoe(id);
+            return View(values);
+        }
+
+        public IActionResult GetStyleColor(int id)
+        {
+            var values = _shoeStyleService.GetColorShoe(id);
+            return View(values);
+        }
+
+        public IActionResult Details(int id)
+        {
+            var values = _shoeStyleService.GetStyleShoeID(id);
+            return View(values);
         }
     }
 }

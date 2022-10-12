@@ -32,25 +32,31 @@ namespace WebShoes.Controllers
         public IActionResult GetMarkaSport(int id)
         {
             var values = _shoeSportService.GetMarkaShoe(id);
-            return View(values.OrderByDescending(x => x.ID));
+            return View(values);
         }
 
         public IActionResult GetSportCurrency(int id)
         {
             var values = _shoeSportService.GetCurrencyShoe(id);
-            return View(values.OrderByDescending(x => x.ID));
+            return View(values);
         }
 
         public IActionResult GetSportSize(int id)
         {
             var values = _shoeSportService.GetSizeShoe(id);
-            return View(values.OrderByDescending(x => x.ID));
+            return View(values);
         }
 
         public IActionResult GetSportColor(int id)
         {
             var values = _shoeSportService.GetColorShoe(id);
-            return View(values.OrderByDescending(x => x.ID));
+            return View(values);
+        }
+
+        public IActionResult Details(int id)
+        {
+            var values = _shoeSportService.GetSportShoeID(id);
+            return View(values);
         }
     }
 }

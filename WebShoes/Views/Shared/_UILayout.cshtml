@@ -82,35 +82,6 @@
     <!---start-header---->
     <div class="header">
         @await Html.PartialAsync("/Views/LayoutPartials/HeaderPartial.cshtml")
-        <!----search---->
-        <div class="mid-header">
-            <div class="wrap">
-                <div class="mid-grid-left">
-                    <form>
-                        <input type="text" placeholder="What Are You Looking for?" />
-                    </form>
-                </div>
-                <div class="mid-grid-right">
-                    <a class="logo" href="index.html"><span> </span></a>
-                </div>
-                <div class="clear"> </div>
-            </div>
-        </div>
-        <!----//End-mid-head---->
-        <!----start-bottom-header---->
-        @await Html.PartialAsync("/Views/LayoutPartials/NavBarPartial.cshtml")
-    </div>
-
-    <!----start-image-slider---->
-    @await Component.InvokeAsync("SlidersList")
-
-    <!----start-price-rage--->
-    <div class="wrap">
-        <div class="price-rage">
-            <h3>Weekly selection:</h3>
-            <div id="slider-range">
-            </div>
-        </div>
     </div>
 
     <!--- start-content---->

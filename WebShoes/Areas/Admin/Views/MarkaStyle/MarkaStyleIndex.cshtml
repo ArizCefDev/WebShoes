@@ -1,0 +1,44 @@
+﻿@model IEnumerable<DTO.DTOEntity.MarkaStyleDTO>
+@{
+    ViewData["Title"] = "MarkaStyleIndex";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    int id = 0;
+}
+
+<section class="wrapper">
+    <div class="table-agile-info">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Marka style table
+            </div>
+            <div>
+                <table class="table" ui-jq="footable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Marka Name</th>
+                            <th>Delete</th>
+                            <th>Update</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                @{
+                                    id = id + 1;
+                                }
+                                <td>@id</td>
+                                <td>@item.ShoeName</td>
+                                <td><a href="/Admin/MarkaStyle/MarkaStyleDelete/@item.ID/" class="btn btn-danger">Delete</a></td>
+                                <td><a href="/Admin/MarkaStyle/MarkaStyleUpdate/@item.ID/" class="btn btn-success">Update</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                    <a href="/Admin/MarkaStyle/MarkaStyleAdd/" class="btn btn-info">Add</a>
+                </table>
+                <a href="/Admin/MarkaStyle/MarkaStyleAdd/" class="btn btn-info">Add</a>
+            </div>
+        </div>
+    </div>
+</section>

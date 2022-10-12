@@ -22,13 +22,49 @@ namespace WebShoes.Controllers
             return View(values);
         }
 
+        public IActionResult ColorList2()
+        {
+            var values = _colorService.GetAll();
+            return View(values);
+        }
+
+        public IActionResult ColorList3()
+        {
+            var values = _colorService.GetAll();
+            return View(values);
+        }
+
         public IActionResult SizeList()
         {
             var values = _sizeService.GetAll();
             return View(values);
         }
 
+        public IActionResult SizeList2()
+        {
+            var values = _sizeService.GetAll();
+            return View(values);
+        }
+
+        public IActionResult SizeList3()
+        {
+            var values = _sizeService.GetAll();
+            return View(values);
+        }
+
         public IActionResult CurrencyList()
+        {
+            var values = _currencyService.GetAll();
+            return View(values);
+        }
+
+        public IActionResult CurrencyList2()
+        {
+            var values = _currencyService.GetAll();
+            return View(values);
+        }
+
+        public IActionResult CurrencyList3()
         {
             var values = _currencyService.GetAll();
             return View(values);

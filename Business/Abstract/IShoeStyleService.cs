@@ -12,6 +12,7 @@ namespace Business.Abstract
         : IBaseService<ShoeStyleDTO, ShoeStyle, ShoeStyleDTO>
     {
         IEnumerable<ShoeStyleDTO> SearchSportShoe(string s);
+        IEnumerable<ShoeStyleDTO> GetStyleShoeID(int id);
         IEnumerable<ShoeStyleDTO> GetCurrencyShoe(int id);
         IEnumerable<ShoeStyleDTO> GetSizeShoe(int id);
         IEnumerable<ShoeStyleDTO> GetColorShoe(int id);

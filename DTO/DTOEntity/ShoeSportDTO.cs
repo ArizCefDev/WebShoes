@@ -18,8 +18,8 @@ namespace DTO.DTOEntity
         public string Image7 { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public string Details { get; set; }
-        public DateTime Date { get; set; }
+        public string Details { get; set; } //
+        public DateTime Date { get; set; } //
         public string Price { get; set; }
         public int Stock { get; set; }
 
@@ -36,6 +36,6 @@ namespace DTO.DTOEntity
         public CurrencyDTO CurrencyDTO { get; set; }
         public string CurrencyName { get; set; }
 
-        public bool Status { get; set; }
+        public bool Status { get; set; }  //
     }
 }

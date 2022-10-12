@@ -43,18 +43,20 @@ namespace Business.Config
             CreateMap<Reklam, ReklamDTO>();
             CreateMap<ReklamDTO, Reklam>();
 
-            CreateMap<ShoeClassic, ShoeClassicDTO>();
+            CreateMap<ShoeClassic, ShoeClassicDTO>()
+                .ForMember(dest => dest.CurrencyName, opt => opt.MapFrom(x => x.Currency.CurrencyName));
             CreateMap<ShoeClassicDTO, ShoeClassic>();
 
-            CreateMap<ShoeDiscount, ShoeDiscountDTO>();
+            CreateMap<ShoeDiscount, ShoeDiscountDTO>()
+                .ForMember(dest => dest.CurrencyName, opt => opt.MapFrom(x => x.Currency.CurrencyName));
             CreateMap<ShoeDiscountDTO, ShoeDiscount>();
 
             CreateMap<ShoeSport, ShoeSportDTO>()
                 .ForMember(dest => dest.CurrencyName, opt => opt.MapFrom(x => x.Currency.CurrencyName));
-
             CreateMap<ShoeSportDTO, ShoeSport>();
 
-            CreateMap<ShoeStyle, ShoeStyleDTO>();
+            CreateMap<ShoeStyle, ShoeStyleDTO>()
+                .ForMember(dest => dest.CurrencyName, opt => opt.MapFrom(x => x.Currency.CurrencyName));
             CreateMap<ShoeStyleDTO, ShoeStyle>();
 
             CreateMap<Size, SizeDTO>();

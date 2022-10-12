@@ -13,13 +13,14 @@ namespace Business.Container
     {
         public static void ContainerServices(this IServiceCollection services)
         {
-            services.AddScoped<IShoeDiscountService, ShoeDiscountService>();
             services.AddScoped<IMarkaDiscountService, MarkaDiscountService>();
+            services.AddScoped<IShoeDiscountService, ShoeDiscountService>();
 
-            services.AddScoped<IShoeSportService, ShoeSportService>();
             services.AddScoped<IMarkaSportService, MarkaSportService>();
+            services.AddScoped<IShoeSportService, ShoeSportService>();
 
             services.AddScoped<IMarkaClassicService, MarkaClassicService>();
+            services.AddScoped<IShoeClassicService, ShoeClassicService>();
 
             services.AddScoped<IShoeStyleService, ShoeStyleService>();
             services.AddScoped<IMarkaStyleService, MarkaStyleService>();
@@ -27,6 +28,10 @@ namespace Business.Container
             services.AddScoped<IColorService, ColorService>();
             services.AddScoped<ICurrencyService, CurrencyService>();
             services.AddScoped<ISizeService, SizeService>();
+
+            services.AddScoped<IAboutService, AboutService>();
+            services.AddScoped<IContactService, ContactService>();
+            services.AddScoped<IMessageService, MessageService>();
 
         }
     }

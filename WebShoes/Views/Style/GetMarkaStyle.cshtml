@@ -14,7 +14,7 @@
             }
         </div>
         <div class="mid-grid-right">
-            <a class="logo" href="index.html"><span> </span></a>
+            <a class="logo" href="/Discount/Index/"><span> </span></a>
         </div>
         <div class="clear"> </div>
     </div>
@@ -35,9 +35,9 @@
                 <div class="product-box-head-right">
                     <ul>
                         <li><span>Filters ::</span></li>
-                        <li><label> </label> <a href="/Filter/ColorList/"> Color</a></li>
-                        <li><label> </label> <a href="/Filter/SizeList/"> Size</a></li>
-                        <li><label> </label> <a href="/Filter/CurrencyList/"> Currency</a></li>
+                        <li><label> </label> <a href="/Filter/ColorList2/"> Color</a></li>
+                        <li><label> </label> <a href="/Filter/SizeList2/"> Size</a></li>
+                        <li><label> </label> <a href="/Filter/CurrencyList2/"> Currency</a></li>
                     </ul>
                 </div>
                 <div class="clear"> </div>
@@ -59,20 +59,19 @@
                             </div>
                         </div>
                         <div class="product-pic">
-                            <a href="#"><img src="~/WebShoes/images/product4.jpg" title="product-name" /></a>
+                            <a href="/Style/Details/@item.ID/"><img src="@item.Image1" title="product-name" style="width:210px;height:240px;" /></a>
                             <p>
-                                <a href="#">
+                                <a href="/Style/Details/@item.ID/">
                                     <small>@item.Name</small>
                                 </a>
-                                <span>@item.Description</span>
                             </p>
                         </div>
                         <div class="product-info">
                             <div class="product-info-cust">
-                                <a href="details.html">Details</a>
+                                <a href="/Style/Details/@item.ID/">Details</a>
                             </div>
                             <div class="product-info-price">
-                                <a href="details.html">@item.CurrencyID @item.Price</a>
+                                <a href="/Style/Details/@item.ID/">@item.Price</a>
                             </div>
                             <div class="clear"> </div>
                         </div>

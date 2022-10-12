@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "MessageShow";
+    Layout = "~/Views/Shared/_PagesLayout.cshtml";
+}
+
+<div class="mid-header">
+    <div class="wrap">
+        <div class="mid-grid-left">
+            <h1>WebShoes.com</h1>
+        </div>
+        <div class="mid-grid-right">
+            <a class="logo" href="/Discount/Index/"><span> </span></a>
+        </div>
+        <div class="clear"> </div>
+    </div>
+</div>
+<!----//End-mid-head---->
+<!----start-bottom-header---->
+@await Html.PartialAsync("/Views/LayoutPartials/NavBarPartial.cshtml")
+<div class="content details-page">
+    <!---start-product-details--->
+    <div class="product-details">
+        <div class="wrap">
+            <ul class="product-head">
+                <li><a href="/Discount/Index/">Home</a> <span>::</span></li>
+                <li class="active-page"><a href="/Contact/MessageAdd/">Contact Page</a></li>
+                <div class="clear"> </div>
+            </ul>
+            <div class="details-left">
+                <div class="details-left-slider">
+                    <ul id="etalage">
+                        
+                    </ul>
+                </div>
+                <div class="details-left-info">
+                    <div class="details-right-head">
+                        <h1>Your ad has been sent successfully</h1>
+                        <p class="product-detail-info">
+                            Return to Home Page
+                        </p>
+
+                    </div>
+                </div>
+                <div class="clear"> </div>
+            </div>
+            <div class="details-right">
+                <a href="/Discount/Index/">SEE MORE</a>
+            </div>
+            <div class="clear"> </div>
+        </div>
+        <!----product-rewies---->
+        <div class="product-reviwes">
+            <div class="wrap">
+
+                <div class="clear"> </div>
+            </div>
+        </div>
+        <div class="clear"> </div>
+    </div>
+</div>
+<!---- start-bottom-grids---->

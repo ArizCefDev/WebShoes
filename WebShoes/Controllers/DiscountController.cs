@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
+using DataAccess.Context;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace WebShoes.Controllers
 {
@@ -7,17 +9,24 @@ namespace WebShoes.Controllers
     {
         private readonly IMarkaDiscountService _markaDiscountService;
         private readonly IShoeDiscountService _shoeDiscountService;
+        private readonly AppDBContext _dBContext;
 
-        public DiscountController(IMarkaDiscountService markaDiscountService, IShoeDiscountService shoeDiscountService)
+        public DiscountController(IMarkaDiscountService markaDiscountService, IShoeDiscountService shoeDiscountService, AppDBContext dBContext)
         {
             _markaDiscountService = markaDiscountService;
             _shoeDiscountService = shoeDiscountService;
+            _dBContext = dBContext;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string s)
         {
-            var values = _shoeDiscountService.GetAll();
-            return View(values);
+            ViewBag.discountshoe = _dBContext.ShoeDiscounts.Count();
+            var values = from a in _shoeDiscountService.GetCurrencyInclude() select a;
+            if (!string.IsNullOrEmpty(s))
+            {
+                values = _shoeDiscountService.SearchDiscountShoe(s);
+            }
+            return View(values.OrderByDescending(x => x.ID));
         }
     }
 }

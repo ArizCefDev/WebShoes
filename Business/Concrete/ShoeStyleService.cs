@@ -47,6 +47,11 @@ namespace Business.Concrete
             return GetListFilter(x => x.SizeID == id);
         }
 
+        public IEnumerable<ShoeStyleDTO> GetStyleShoeID(int id)
+        {
+            return GetListFilter(x => x.ID == id);
+        }
+
         public IEnumerable<ShoeStyleDTO> SearchSportShoe(string s)
         {
             return GetListFilter(x => x.Name.Contains(s));

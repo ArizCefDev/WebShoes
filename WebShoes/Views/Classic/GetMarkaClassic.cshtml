@@ -1,0 +1,91 @@
+﻿@model IEnumerable<DTO.DTOEntity.ShoeClassicDTO>
+@{
+    ViewData["Title"] = "GetMarkaClassic";
+    Layout = "~/Views/Shared/_PagesLayout.cshtml";
+}
+
+<!----search---->
+<div class="mid-header">
+    <div class="wrap">
+        <div class="mid-grid-left">
+            @using (Html.BeginForm())
+            {
+                @Html.TextBox("s")
+            }
+        </div>
+        <div class="mid-grid-right">
+            <a class="logo" href="/Discount/Index/"><span> </span></a>
+        </div>
+        <div class="clear"> </div>
+    </div>
+</div>
+<!----//End-mid-head---->
+<!----start-bottom-header---->
+@await Html.PartialAsync("/Views/LayoutPartials/NavBarPartial.cshtml")
+<div class="content product-box-main">
+    <div class="wrap">
+        <div class="content-left">
+            @await Component.InvokeAsync("ClassicCategoryList")
+        </div>
+        <div class="content-right product-box">
+            <div class="product-box-head">
+                <div class="product-box-head-left">
+                    <h3>Classic Products</h3>
+                </div>
+                <div class="product-box-head-right">
+                    <ul>
+                        <li><span>Filters ::</span></li>
+                        <li><label> </label> <a href="/Filter/ColorList3/"> Color</a></li>
+                        <li><label> </label> <a href="/Filter/SizeList3/"> Size</a></li>
+                        <li><label> </label> <a href="/Filter/CurrencyList3/"> Currency</a></li>
+                    </ul>
+                </div>
+                <div class="clear"> </div>
+            </div>
+            <div class="product-grids">
+                @await Html.PartialAsync("/Views/LayoutPartials/ScriptPartial.cshtml")
+                @foreach (var item in Model)
+                {
+                    <div style="margin:7px;" class="product-grid fade last-grid" onclick="location.href='details.html';">
+                        <div class="product-grid-head">
+                            <ul class="grid-social">
+                                <li><a class="facebook" href="#"><span> </span></a></li>
+                                <li><a class="twitter" href="#"><span> </span></a></li>
+                                <li><a class="googlep" href="#"><span> </span></a></li>
+                                <div class="clear"> </div>
+                            </ul>
+                            <div class="block">
+                                <div class="starbox small ghosting"> </div> <span> (46)</span>
+                            </div>
+                        </div>
+                        <div class="product-pic">
+                            <a href="/Classic/Details/@item.ID/"><img src="@item.Image1" title="product-name" style="width:210px;height:240px;" /></a>
+                            <p>
+                                <a href="/Classic/Details/@item.ID/">
+                                    <small>@item.Name</small>
+                                </a>
+                            </p>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-info-cust">
+                                <a href="/Classic/Details/@item.ID/">Details</a>
+                            </div>
+                            <div class="product-info-price">
+                                <a href="/Classic/Details/@item.ID/">@item.Price</a>
+                            </div>
+                            <div class="clear"> </div>
+                        </div>
+                        <div class="more-product-info">
+                            <span> </span>
+                        </div>
+                    </div>
+                }
+                <div class="clear"> </div>
+            </div>
+        </div>
+        <div class="clear"> </div>
+    </div>
+</div>
+
+
+
