@@ -13,7 +13,7 @@
             }
         </div>
         <div class="mid-grid-right">
-            <a class="logo" href="index.html"><span> </span></a>
+            <a class="logo" href="/Discount/Index/"><span> </span></a>
         </div>
         <div class="clear"> </div>
     </div>
@@ -116,21 +116,21 @@
                             </div>
                         </div>
                         <div class="product-pic">
-                            <a href="#"><img src="@item.Image1" title="product-name" style="width:210px;height:240px;" /></a>
+                            <a href="/Discount/Details/@item.ID/"><img src="@item.Image1" title="product-name" style="width:210px;height:240px;" /></a>
                             <p>
-                                <a href="#">
+                                <a href="/Discount/Details/@item.ID/">
                                     <small>@item.Name</small>
                                 </a>
                             </p>
                         </div>
                         <div class="product-info">
                             <div class="product-info-cust">
-                                <a href="details.html">Details</a>
+                                <a href="/Discount/Details/@item.ID/">Details</a>
                             </div>
                             <div class="product-info-price">
                                 <del style="color:red;">@item.CurrencyName @item.OldPrice</del>
                                 <br>
-                                <a href="details.html">@item.CurrencyName @item.Price</a>
+                                <a href="/Discount/Details/@item.ID/">@item.CurrencyName @item.Price</a>
                             </div>
                             <div class="clear"> </div>
                         </div>

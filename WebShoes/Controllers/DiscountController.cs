@@ -28,5 +28,11 @@ namespace WebShoes.Controllers
             }
             return View(values.OrderByDescending(x => x.ID));
         }
+
+        public IActionResult Details(int id)
+        {
+            var values = _shoeDiscountService.GetDiscountShoeID(id);
+            return View(values);
+        }
     }
 }

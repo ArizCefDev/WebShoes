@@ -1,6 +1,6 @@
-﻿@model DTO.DTOEntity.ShoeSportDTO
+﻿@model DTO.DTOEntity.ShoeClassicDTO
 @{
-    ViewData["Title"] = "ShoeSportUpdate";
+    ViewData["Title"] = "ShoeClassicUpdate";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -57,7 +57,7 @@
                                 <div class="form-group ">
                                     <label for="cname" class="control-label col-lg-3">Marka Sport</label>
                                     <div class="col-lg-6">
-                                        @Html.DropDownListFor(x=>x.MarkaSportID,(IEnumerable<SelectListItem>) ViewBag.m,new {@class="form-control"})
+                                        @Html.DropDownListFor(x=>x.MarkaClassicID,(IEnumerable<SelectListItem>) ViewBag.m,new {@class="form-control"})
                                     </div>
                                 </div>
                                 <div class="form-group ">
@@ -98,4 +98,3 @@
         </div>
     </div>
 </section>
-

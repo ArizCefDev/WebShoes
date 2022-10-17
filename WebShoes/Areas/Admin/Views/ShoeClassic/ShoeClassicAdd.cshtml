@@ -1,6 +1,6 @@
-﻿@model DTO.DTOEntity.ShoeSportDTO
+﻿@model DTO.DTOEntity.ShoeClassicDTO
 @{
-    ViewData["Title"] = "ShoeSportUpdate";
+    ViewData["Title"] = "ShoeClassicAdd";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -10,7 +10,7 @@
             <div class="col-lg-12">
                 <section class="panel">
                     <header class="panel-heading">
-                        Form Update
+                        Form Add
                         <span class="tools pull-right">
                             <a class="fa fa-chevron-down" href="javascript:;"></a>
                         </span>
@@ -19,17 +19,47 @@
                         <div class=" form">
                             <form class="cmxform form-horizontal " id="commentForm" method="post" novalidate="novalidate">
                                 <div class="form-group ">
+                                    <label for="cname" class="control-label col-lg-3">Shoe Image 1</label>
                                     <div class="col-lg-6">
-                                        <input class=" form-control" id="cname" asp-for="Image1" type="hidden">
-                                        <input class=" form-control" id="cname" asp-for="Image2" type="hidden">
-                                        <input class=" form-control" id="cname" asp-for="Image3" type="hidden">
-                                        <input class=" form-control" id="cname" asp-for="Image4" type="hidden">
-                                        <input class=" form-control" id="cname" asp-for="Image5" type="hidden">
-                                        <input class=" form-control" id="cname" asp-for="Image6" type="hidden">
-                                        <input class=" form-control" id="cname" asp-for="Image7" type="hidden">
+                                        <input class=" form-control" id="cname" asp-for="Image1" type="text">
                                     </div>
                                 </div>
-
+                                <div class="form-group ">
+                                    <label for="cname" class="control-label col-lg-3">Shoe Image 2</label>
+                                    <div class="col-lg-6">
+                                        <input class=" form-control" id="cname" asp-for="Image2" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="cname" class="control-label col-lg-3">Shoe Image 3</label>
+                                    <div class="col-lg-6">
+                                        <input class=" form-control" id="cname" asp-for="Image3" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="cname" class="control-label col-lg-3">Shoe Image 4</label>
+                                    <div class="col-lg-6">
+                                        <input class=" form-control" id="cname" asp-for="Image4" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="cname" class="control-label col-lg-3">Shoe Image 5</label>
+                                    <div class="col-lg-6">
+                                        <input class=" form-control" id="cname" asp-for="Image5" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="cname" class="control-label col-lg-3">Shoe Image 6</label>
+                                    <div class="col-lg-6">
+                                        <input class=" form-control" id="cname" asp-for="Image6" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="cname" class="control-label col-lg-3">Shoe Image 7</label>
+                                    <div class="col-lg-6">
+                                        <input class=" form-control" id="cname" asp-for="Image7" type="text">
+                                    </div>
+                                </div>
                                 <div class="form-group ">
                                     <label for="cname" class="control-label col-lg-3">Shoe Name</label>
                                     <div class="col-lg-6">
@@ -49,15 +79,9 @@
                                     </div>
                                 </div>
                                 <div class="form-group ">
-                                    <label for="cname" class="control-label col-lg-3">Date</label>
-                                    <div class="col-lg-6">
-                                        <input class=" form-control" id="cname" asp-for="Date" type="date">
-                                    </div>
-                                </div>
-                                <div class="form-group ">
                                     <label for="cname" class="control-label col-lg-3">Marka Sport</label>
                                     <div class="col-lg-6">
-                                        @Html.DropDownListFor(x=>x.MarkaSportID,(IEnumerable<SelectListItem>) ViewBag.m,new {@class="form-control"})
+                                        @Html.DropDownListFor(x=>x.MarkaClassicID,(IEnumerable<SelectListItem>) ViewBag.m,new {@class="form-control"})
                                     </div>
                                 </div>
                                 <div class="form-group ">
@@ -86,7 +110,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-lg-offset-3 col-lg-6">
-                                        <button class="btn btn-success" type="submit">Update</button>
+                                        <button class="btn btn-primary" type="submit">Save</button>
                                     </div>
                                 </div>
                             </form>

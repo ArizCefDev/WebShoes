@@ -1,0 +1,49 @@
+﻿@model IEnumerable<DTO.DTOEntity.ShoeClassicDTO>
+@{
+    ViewData["Title"] = "ShoeClassicIndex";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    int id = 0;
+}
+
+<section class="wrapper">
+    <div class="table-agile-info">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Shoe classic table
+            </div>
+            <div>
+                <table class="table" ui-jq="footable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Shoe Name</th>
+                            <th>Stock</th>
+                            <th>Date</th>
+                            <th>Delete</th>
+                            <th>Update</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                @{
+                                    id = id + 1;
+                                }
+                                <td>@id</td>
+                                <td>@item.Name</td>
+                                <td>@item.Stock</td>
+                                <td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
+                                <td><a href="/Admin/ShoeClassic/ShoeClassicDelete/@item.ID/" class="btn btn-danger">Delete</a></td>
+                                <td><a href="/Admin/ShoeClassic/ShoeClassicUpdate/@item.ID/" class="btn btn-success">Update</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                    <a href="/Admin/ShoeClassic/ShoeClassicAdd/" class="btn btn-info">Add</a>
+                </table>
+                <a href="/Admin/ShoeClassic/ShoeClassicAdd/" class="btn btn-info">Add</a>
+            </div>
+        </div>
+    </div>
+</section>
+
